@@ -4,3 +4,8 @@ src/old/
 src/logs/
 .venv/
 .ipynb_checkpoints
+
+# Archivos temporales de Microsoft Office y LibreOffice
+~$*
+~*.tmp
+*.tmp
