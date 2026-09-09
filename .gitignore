@@ -1,0 +1,6 @@
+dataset*/
+tmp/
+src/old/
+src/logs/
+.venv/
+.ipynb_checkpoints
