@@ -39,8 +39,12 @@ nxsa_AI/
 ├── requirements/
 │   └── requirements.txt               # Python dependencies
 ├── utils/
-│   └── download_dataset_files.sh      # Helper script to download test observation files
+│   ├── download_dataset_files.sh      # Dataset download helper (Linux/macOS/Git Bash)
+│   ├── download_dataset_files.bat     # Dataset download helper (Windows CMD/PowerShell)
+│   ├── obsids_list.txt                # Main observation list used for the validation campaign
+│   └── obsids_list_test.txt           # Reduced list for quick tests and control cases
 ├── TFM/                               # Master's Thesis document (PDF)
+├── CITATION.cff                       # Citation metadata
 ├── LICENSE.md                         # GPLv3
 └── README.md
 ```
@@ -68,7 +72,7 @@ The workflow processes XMM-Newton EPIC-pn **full-frame** observations through th
 ### Requirements
 
 - Python 3.11
-- Linux or macOS recommended (Windows via Git Bash)
+- Linux or macOS recommended; Windows is also supported
 
 ### Setup
 
@@ -77,19 +81,41 @@ The workflow processes XMM-Newton EPIC-pn **full-frame** observations through th
 git clone https://github.com/davidglt/nxsa_AI.git
 cd nxsa_AI
 
-# 2. Download test observation files (Linux / Git Bash)
-cd utils
-./download_dataset_files.sh
-cd ..
-
-# 3. Create and activate a virtual environment
+# 2. Create and activate a virtual environment
 python3.11 -m venv .venv
 source .venv/bin/activate          # Linux/macOS
 # .venv\Scripts\activate.bat       # Windows
 
-# 4. Install dependencies
+# 3. Install dependencies
 pip install -r requirements/requirements.txt
 ```
+
+> Note: dependencies are stored in `requirements/requirements.txt`, not in the repository root.
+
+---
+
+## Dataset download
+
+The repository includes helper scripts to download the observation files used in the validation campaign.
+
+Run **from the repository root** (no need to enter `utils/`):
+
+### Linux / macOS / Git Bash
+
+```bash
+./utils/download_dataset_files.sh
+```
+
+### Windows (CMD or PowerShell)
+
+```bat
+utils\download_dataset_files.bat
+```
+
+The observation lists are stored in:
+
+- `utils/obsids_list.txt` — main list used for the validation campaign (100 observations)
+- `utils/obsids_list_test.txt` — reduced list for quick tests and control cases
 
 ---
 
@@ -146,7 +172,7 @@ Four profiles were evaluated in the validation campaign:
 
 ## Data
 
-Observation data are publicly available via the [XMM-Newton Science Archive (XSA)](https://www.cosmos.esa.int/web/xmm-newton/xsa). The `utils/download_dataset_files.sh` script automates the download of the test dataset used in the validation campaign.
+Observation data are publicly available via the [XMM-Newton Science Archive (XSA)](https://www.cosmos.esa.int/web/xmm-newton/xsa).
 
 Input files per observation:
 - **FITS event file** — EPIC-pn calibrated events (PPS product)
