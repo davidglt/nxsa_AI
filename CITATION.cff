@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "nxsa_AI: X-ray Source Detection in XMM-Newton with HDBSCAN"
+version: "1.0.0"
+date-released: "2026-09-07"
+license: GPL-3.0
+repository-code: "https://github.com/davidglt/nxsa_AI"
+abstract: >
+  Software developed for the Master's Thesis "Detección de fuentes de
+  rayos X en XMM-Newton con HDBSCAN" (UNIR, 2026). Implements an
+  unsupervised X-ray source detection methodology based on HDBSCAN
+  applied to XMM-Newton EPIC-pn event files, including event filtering,
+  spatiotemporal feature space construction, HDBSCAN clustering per CCD,
+  DS9 region generation, and quantitative validation against the official
+  SAS pipeline (precision, recall, F1, angular matching distance).
+authors:
+  - family-names: "González López-Tercero"
+    given-names: "David"
+    email: "davidglt@hotmail.com"
+keywords:
+  - XMM-Newton
+  - EPIC-pn
+  - HDBSCAN
+  - clustering
+  - x-ray astronomy
+  - source detection
+  - unsupervised learning
+  - machine learning
+  - python
+references:
+  - type: thesis
+    title: "Detección de fuentes de rayos X en XMM-Newton con HDBSCAN"
+    authors:
+      - family-names: "González López-Tercero"
+        given-names: "David"
+    institution:
+      name: "Universidad Internacional de La Rioja (UNIR)"
+    year: 2026
+    thesis-type: "Master's Thesis"
